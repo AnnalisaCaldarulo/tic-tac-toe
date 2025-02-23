@@ -38,7 +38,7 @@
   --primary: #5af75a;
   --player-input-background: #225524; 
   --primary-darker: #48d23e; 
-  --game-board-background: #70db77; 
+  --game-board-background: #93b795; 
   --game-over-background: rgba(26, 50, 22, 0.95);
   --primary-lighter: #a2ef9f; 
   --white: white; 
@@ -226,7 +226,7 @@ ol {
   height: 8rem;
   border: none;
   background: var(--game-board-background);
-  color: (--title-color);
+  color: var(--game-over-background);
   font-size: 5rem;
   cursor: pointer;
   font-family: 'Caprasimo', cursive;
@@ -277,14 +277,14 @@ ol {
 
 #game-over button:hover {
   background: var(--primary-lighter);
-  color: (--title-color);
+  color: var(--title-color);
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(255, 187, 0, 0.8);
 }
 
 #log {
   max-width: 20rem;
-  color: (--title-color);
+  color: var(--title-color);
   list-style: none;
   margin: 2rem auto;
   padding: 0;
