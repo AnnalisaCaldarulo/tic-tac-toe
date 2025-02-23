@@ -1,6 +1,7 @@
 import Player from "./components/Player";
 import Gameboard from "./components/Gameboard";
 function App() {
+
   return (
     <main>
       <div id="game-container">
