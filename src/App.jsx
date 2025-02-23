@@ -28,7 +28,7 @@ function App() {
   const activePlayer = deriveActivePlayer(gameTurns);
 
   // spostiamo qui la logica di calcolo del gameboard
-  let gameBoard = initialGameBoard;
+  let gameBoard = [...initialGameBoard.map(array => [...array])];
   for (const turn of gameTurns) {
     const { square, player } = turn;
     const { row, col } = square;
@@ -63,15 +63,19 @@ function App() {
       return updatedTurns;
     });
   }
+
+  function handleRematch() {
+    setGameTurns([]);
+  }
   return (
     <main>
       <div id="game-container">
         <ol id="players" className="highlight-player">
-          <Player initialName="Player" symbol="X" isActive={activePlayer === "X"} />
+          <Player initialName="Player 1" symbol="X" isActive={activePlayer === "X"} />
           <Player initialName="Player 2" symbol="0" isActive={activePlayer === "0"} />
         </ol>
         {(winner || hasDraw) && (
-          <GameOver winner={winner} />
+          <GameOver winner={winner} onRestart={handleRematch} />
         )}
         <Gameboard onSelectSquare={handleSelectSquare} board={gameBoard} />
       </div>
